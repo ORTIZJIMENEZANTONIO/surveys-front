@@ -16,7 +16,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4   # ← versión correcta
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
@@ -27,8 +27,11 @@ jobs:
       - name: Export static site
         run: yarn export
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+      - name: Create .nojekyll
+        run: echo "" > out/.nojekyll
+
+      - name: Upload static files
+        uses: actions/upload-pages-artifact@v3   # ← versión nueva obligatoria
         with:
           path: out
 
@@ -38,4 +41,4 @@ jobs:
 
     steps:
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4   # ← versión nueva
