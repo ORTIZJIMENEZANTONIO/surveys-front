@@ -135,7 +135,7 @@ export default function ModulesSection() {
           {modules.map((mod) => (
             <div
               key={mod.id}
-              className="col-12 col-md-6 col-lg-4 ao-scroll visible mb-2"
+              className={`col-12 col-md-6 col-lg-4 ao-scroll mb-2 ${styles.moduleWrapper}`}
             >
               <div
                 className={`${styles.moduleCard}`}
