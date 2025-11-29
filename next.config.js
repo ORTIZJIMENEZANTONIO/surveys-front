@@ -7,6 +7,9 @@ const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
   },
+  experimental: {
+    appDir: false,
+  },
   basePath: "/surveys-front",
   assetPrefix: "/surveys-front/",
 };
