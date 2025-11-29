@@ -1,20 +1,24 @@
 "use client";
 
+import styles from "./Features.module.scss";
 import { FaBolt, FaChartPie, FaCheckCircle } from "react-icons/fa";
 
 export default function Features() {
   return (
-    <section className="py-5 why-section" data-ao-group>
+    <section className={styles.section} data-ao-group>
       <div className="container text-center ao-scroll">
         <h2 className="fw-bold mb-3">¿Por qué AO Insight Engine?</h2>
+
         <p className="text-muted mb-5 mx-auto" style={{ maxWidth: "650px" }}>
           Una herramienta diseñada para análisis empresariales profesionales,
           automatizados y listos para tomar decisiones reales.
         </p>
 
         <div className="row gy-4 justify-content-center">
-          <div className="col-12 col-md-4">
-            <div className="card info-card shadow-sm p-4 text-center rounded-4">
+          <div className="col-12 col-md-4 ao-scroll">
+            <div
+              className={`${styles.infoCard} card shadow-sm p-4 text-center rounded-4`}
+            >
               <FaChartPie
                 size={40}
                 color="var(--ao-purple)"
@@ -27,12 +31,14 @@ export default function Features() {
             </div>
           </div>
 
-          <div className="col-12 col-md-4">
-            <div className="card info-card shadow-sm p-4 text-center rounded-4">
+          <div className="col-12 col-md-4 ao-scroll">
+            <div
+              className={`${styles.infoCard} card shadow-sm p-4 text-center rounded-4`}
+            >
               <FaBolt
                 size={40}
                 color="var(--ao-pink)"
-                className="mb-3 card-img-top "
+                className="mb-3 card-img-top"
               />
               <h5 className="fw-bold mb-2">Procesos Más Rápidos</h5>
               <p className="text-muted small">
@@ -41,8 +47,10 @@ export default function Features() {
             </div>
           </div>
 
-          <div className="col-12 col-md-4">
-            <div className="card info-card shadow-sm p-4 text-center rounded-4">
+          <div className="col-12 col-md-4 ao-scroll">
+            <div
+              className={`${styles.infoCard} card shadow-sm p-4 text-center rounded-4`}
+            >
               <FaCheckCircle
                 size={40}
                 color="var(--ao-orange)"

@@ -1,9 +1,11 @@
 "use client";
 
+import styles from "./FinalCTA.module.scss";
+
 export default function FinalCTA() {
   return (
     <section
-      className="container-fluid px-0 hero-full ao-final-cta rounded-0"
+      className={`${styles.finalCta} container-fluid px-0 rounded-0`}
       data-ao-group
     >
       <div className="p-5 text-center ao-scroll">

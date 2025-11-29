@@ -1,0 +1,16 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+/* ==========================================================
+   FEATURES SECTION
+   ========================================================== */
+
+.section {
+  padding: 5rem 0;
+}
+
+.infoCard {
+  @include card-shadow;
+  border: none;
+  text-align: center;
+}

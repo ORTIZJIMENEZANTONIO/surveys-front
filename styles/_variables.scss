@@ -1,0 +1,31 @@
+/* ==========================================================
+   AO DESIGN TOKENS — VARIABLES (SASS + CSS)
+   ========================================================== */
+
+/* SASS VARIABLES */
+$ao-purple: #6D2FD8;
+$ao-magenta: #B43CC7;
+$ao-pink: #E54499;
+$ao-orange: #F3873A;
+$ao-yellow: #FBD165;
+$ao-dark: #1C1C1E;
+$ao-light: #F7F7F7;
+
+$gradient-primary: linear-gradient(135deg,
+    $ao-purple 0%,
+    $ao-magenta 35%,
+    $ao-pink 65%,
+    $ao-orange 100%);
+
+/* CSS VARIABLES */
+:root {
+  --ao-purple: #6d2fd8;
+  --ao-magenta: #b43cc7;
+  --ao-pink: #e54499;
+  --ao-orange: #f3873a;
+  --ao-yellow: #fbd165;
+  --ao-dark: #1c1c1e;
+  --ao-light: #f7f7f7;
+
+  --ao-gradient: #{$gradient-primary};
+}

@@ -1,0 +1,43 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+/* ==========================================================
+   FINAL CTA SECTION
+   ========================================================== */
+
+.finalCta {
+  @include gradient-bg;
+  border-radius: 2rem;
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 1rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 30%,
+        rgba(255, 255, 255, 0.15),
+        transparent 60%);
+    animation: aoGlow 8s ease-in-out infinite alternate;
+  }
+
+  /* children animan con scroll reveal */
+  h2,
+  p,
+  button {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: all 1s ease;
+  }
+
+  &.visible {
+
+    h2,
+    p,
+    button {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

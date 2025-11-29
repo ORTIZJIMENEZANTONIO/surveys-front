@@ -1,0 +1,90 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+/* ==========================================================
+   HERO SECTION
+   ========================================================== */
+
+.heroFull {
+  width: 100%;
+  padding: clamp(4rem, 3vw, 7rem) 0;
+  @include gradient-bg;
+  background-size: 200% 200%;
+  animation: aoGradient 14s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(4px);
+    z-index: 1;
+  }
+
+  * {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+/* ==========================================================
+   FLOATING CARDS
+   ========================================================== */
+
+.heroCardsFloating {
+  margin-top: -7rem;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 10;
+}
+
+.featureCard {
+  border: none;
+  text-align: center;
+  @include card-shadow;
+
+  svg {
+    width: 75px;
+    height: 75px;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* ==========================================================
+   BLUR SHAPES
+   ========================================================== */
+
+.shape {
+  position: absolute;
+  filter: blur(80px);
+  opacity: 0.45;
+  z-index: 1;
+}
+
+.shape1 {
+  width: 280px;
+  height: 280px;
+  background: var(--ao-purple);
+  top: -60px;
+  left: -60px;
+}
+
+.shape2 {
+  width: 240px;
+  height: 240px;
+  background: var(--ao-magenta);
+  bottom: -40px;
+  right: -40px;
+}
+
+.shape3 {
+  width: 220px;
+  height: 220px;
+  background: var(--ao-pink);
+  top: 28%;
+  left: 55%;
+}

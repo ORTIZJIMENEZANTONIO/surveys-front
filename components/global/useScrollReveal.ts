@@ -12,19 +12,25 @@ export default function useScrollReveal() {
           if (!entry.isIntersecting) return;
 
           const group = entry.target as HTMLElement;
-          const children = group.querySelectorAll(".ao-scroll");
+          const children = group.querySelectorAll<HTMLElement>(".ao-scroll");
 
           children.forEach((child, index) => {
-            (child as HTMLElement).style.transitionDelay = `${index * 120}ms`;
-            child.classList.add("visible");
+            // 🚀 PREPARA RENDERIZADO SUAVE
+            child.style.willChange = "opacity, transform";
+
+            // 🚀 STAGGER SIN LAG (delay se aplica fuera del frame)
+            const delay = index * 120;
+
+            requestAnimationFrame(() => {
+              child.style.transitionDelay = `${delay}ms`;
+              child.classList.add("visible");
+            });
           });
 
           observer.unobserve(group);
         });
       },
-      {
-        threshold: 0.15, // cuando el 15% del grupo es visible
-      }
+      { threshold: 0.15 }
     );
 
     groups.forEach((group) => observer.observe(group));

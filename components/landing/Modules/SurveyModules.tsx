@@ -1,5 +1,7 @@
 "use client";
 
+import styles from "./SurveyModules.module.scss";
+
 export default function ModulesSection() {
   const modules = [
     {
@@ -71,7 +73,7 @@ export default function ModulesSection() {
       title: "Atención al Cliente",
       time: "10 min",
       status: "not-started",
-      progress: 0,
+      progress: 50,
       showResults: false,
     },
     {
@@ -116,54 +118,56 @@ export default function ModulesSection() {
     },
   ];
 
-  const getStatusClass = (status: string) => {
-    switch (status) {
-      case "completed":
-        return "ao-module-completed";
-      case "in-progress":
-        return "ao-module-in-progress";
-      default:
-        return "ao-module-not-started";
-    }
+  const getStatus = (s: string) => {
+    if (s === "completed") return styles.completed;
+    if (s === "in-progress") return styles.inProgress;
+    return styles.notStarted;
   };
 
   return (
     <section className="py-5 bg-light" data-ao-group>
       <div className="container">
-        <h2 className="fw-bold text-center mb-4">Módulos del diagnóstico</h2>
+        <h2 className="fw-bold text-center mb-4 ao-scroll">
+          Módulos del diagnóstico
+        </h2>
 
-        <div className="row gy-4">
+        <div className="row">
           {modules.map((mod) => (
-            <div className="col-12 col-md-6 col-lg-4" key={mod.id}>
+            <div
+              key={mod.id}
+              className="col-12 col-md-6 col-lg-4 ao-scroll visible mb-2"
+            >
               <div
-                className="ao-module-card ao-scroll"
+                className={`${styles.moduleCard}`}
                 style={
                   { "--progress": `${mod.progress}%` } as React.CSSProperties
                 }
               >
-                {/* Left icon */}
-                <div className={`ao-module-icon ${getStatusClass(mod.status)}`}>
-                  {mod.status === "completed" ? "✓" : mod.id}
-                </div>
-
-                {/* Middle content */}
-                <div className="ao-module-info" style={{ flexGrow: 1 }}>
-                  <h5>{mod.title}</h5>
-                  <div className="ao-module-meta">⏱ {mod.time}</div>
-
-                  {/* PROGRESS BAR */}
-                  <div className="ao-progress-container">
-                    <div className="ao-progress-fill"></div>
+                <div className="row g-0 w-100">
+                  <div className="col-4 col-md-3">
+                    <div className={`${styles.icon} ${getStatus(mod.status)}`}>
+                      {mod.status === "completed" ? "✓" : mod.id}
+                    </div>
                   </div>
-                </div>
 
-                {/* Right side — results */}
-                <div className="ao-module-right">
-                  {mod.showResults && (
-                    <a href="#" className="ao-results-link">
-                      Ver resultados
-                    </a>
-                  )}
+                  <div className="col-8 col-md-9">
+                    <div className="card-body" style={{ flexGrow: 1 }}>
+                      <h5 className="fw-bold card-title">{mod.title}</h5>
+                      <div className="text-muted small">⏱ {mod.time}</div>
+
+                      <div className={styles.progressContainer}>
+                        <div className={styles.progressFill}></div>
+                      </div>
+                    </div>
+
+                    <div>
+                      {mod.showResults && (
+                        <a href="#" className={styles.resultsLink}>
+                          Ver resultados
+                        </a>
+                      )}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

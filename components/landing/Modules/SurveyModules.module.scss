@@ -1,0 +1,90 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+/* ==========================================================
+   AO MODULES — E-LEARNING CARDS
+   ========================================================== */
+
+.moduleCard {
+  background: white;
+  border-radius: 1.2rem;
+  padding: 1.6rem;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  transition: 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.1);
+  }
+
+  &.visible {
+    .progressFill {
+      width: var(--progress);
+    }
+
+    .icon {
+      transform: scale(1.05);
+      box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
+    }
+  }
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 1.15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+
+  &.notStarted {
+    background: var(--ao-dark);
+    color: white;
+  }
+
+  &.inProgress {
+    background: var(--ao-pink);
+    color: white;
+  }
+
+  &.completed {
+    background: #0cc26c;
+    color: white;
+  }
+}
+
+/* Progress bar */
+.progressContainer {
+  width: 100%;
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 0.8rem;
+}
+
+.progressFill {
+  height: 100%;
+  width: 0%;
+  background: var(--ao-gradient);
+  border-radius: 6px;
+  transition: width 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* Results link */
+.resultsLink {
+  color: #0cc26c;
+  font-weight: 600;
+  font-size: 0.9rem;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

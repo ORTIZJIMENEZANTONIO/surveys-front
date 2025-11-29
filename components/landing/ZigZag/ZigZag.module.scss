@@ -1,0 +1,29 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+/* ==========================================================
+   ZIGZAG SECTION
+   ========================================================== */
+
+.section {
+  background: var(--ao-light);
+  border-radius: 2rem;
+  margin: 3rem auto;
+  padding: clamp(3rem, 8vw, 5rem) 0;
+}
+
+/* Tag Chips */
+.chip {
+  background: white;
+  padding: 0.55rem 1.1rem;
+  border-radius: 2rem;
+  border: 1px solid var(--ao-gray-300);
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: 0.25s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  }
+}

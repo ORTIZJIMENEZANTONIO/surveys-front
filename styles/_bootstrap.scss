@@ -1,0 +1,25 @@
+@use "./variables";
+
+/* BOOTSTRAP OVERRIDES */
+$primary: variables.$ao-purple;
+$secondary: variables.$ao-magenta;
+$success: variables.$ao-yellow;
+$info: variables.$ao-pink;
+$warning: variables.$ao-orange;
+$danger: variables.$ao-pink;
+$light: variables.$ao-light;
+$dark: variables.$ao-dark;
+
+$border-radius: .6rem;
+
+.btn-gradient-primary {
+  background: variables.$gradient-primary;
+  border: none;
+  color: white;
+  font-weight: 600;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    filter: brightness(1.05);
+  }
+}

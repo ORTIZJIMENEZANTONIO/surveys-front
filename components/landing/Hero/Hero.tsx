@@ -1,20 +1,23 @@
 "use client";
 
-import IconBulb from "./icons/IconBulb";
-import IconGear from "./icons/IconGear";
-import IconAnalytics from "./icons/IconAnalytics";
+import styles from "./Hero.module.scss";
+import IconBulb from "@/components/landing/icons/IconBulb";
+import IconGear from "@/components/landing/icons/IconGear";
+import IconAnalytics from "@/components/landing/icons/IconAnalytics";
 
 export default function Hero() {
   return (
     <>
-      {/* HERO FULL WIDTH */}
-      <section className="hero-full text-center position-relative overflow-hidden ">
-        {/* Gradient shapes */}
-        <div className="ao-shape ao-shape-1"></div>
-        <div className="ao-shape ao-shape-2"></div>
-        <div className="ao-shape ao-shape-3"></div>
+      {/* HERO */}
+      <section
+        className={`${styles.heroFull} position-relative overflow-hidden`}
+      >
+        {/* Shapes */}
+        <div className={`${styles.shape} ${styles.shape1}`}></div>
+        <div className={`${styles.shape} ${styles.shape2}`}></div>
+        <div className={`${styles.shape} ${styles.shape3}`}></div>
 
-        <div className="container py-5 hero-inner">
+        <div className="container py-5">
           <span className="ao-badge d-inline-block mb-3">Powered by AI</span>
 
           <h1 className="display-3 fw-bold text-white mb-3">
@@ -32,13 +35,15 @@ export default function Hero() {
         </div>
       </section>
 
-      {/* FLOATING CARDS — OUTSIDE THE HERO */}
-      <section className="hero-cards-floating" data-ao-group>
+      {/* FLOATING CARDS */}
+      <section className={`${styles.heroCardsFloating}`} data-ao-group>
         <div className="container">
           <div className="row gy-4 justify-content-center">
             <div className="col-12 col-md-4 col-lg-3 ao-scroll">
-              <div className="card shadow rounded-4 feature-card py-3 gap-3 text-center">
-                <IconBulb className="card-img-top mx-auto" />
+              <div
+                className={`${styles.featureCard} card shadow rounded-4 py-3 gap-3 text-center`}
+              >
+                <IconBulb className="mx-auto" />
                 <div className="card-body">
                   <h5 className="fw-bold mb-1">Diagnóstico Empresarial</h5>
                   <p className="text-secondary small mb-0">
@@ -49,8 +54,10 @@ export default function Hero() {
             </div>
 
             <div className="col-12 col-md-4 col-lg-3 ao-scroll">
-              <div className="card shadow rounded-4 feature-card py-3 gap-3 text-center">
-                <IconGear className="card-img-top mx-auto" />
+              <div
+                className={`${styles.featureCard} card shadow rounded-4 py-3 gap-3 text-center`}
+              >
+                <IconGear className="mx-auto" />
                 <div className="card-body">
                   <h5 className="fw-bold mb-1">Procesos analizados</h5>
                   <p className="text-secondary small mb-0">
@@ -61,8 +68,10 @@ export default function Hero() {
             </div>
 
             <div className="col-12 col-md-4 col-lg-3 ao-scroll">
-              <div className="card shadow rounded-4 feature-card py-3 gap-3 text-center">
-                <IconAnalytics className="card-img-top mx-auto" />
+              <div
+                className={`${styles.featureCard} card shadow rounded-4 py-3 gap-3 text-center`}
+              >
+                <IconAnalytics className="mx-auto" />
                 <div className="card-body">
                   <h5 className="fw-bold mb-1">Recomendaciones con IA</h5>
                   <p className="text-secondary small mb-0">
