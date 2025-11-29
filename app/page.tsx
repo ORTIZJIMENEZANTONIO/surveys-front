@@ -1,5 +1,17 @@
-import Image from "next/image";
+import Hero from "@/components/landing/Hero";
+import Features from "@/components/landing/Features";
+import ZigZag from "@/components/landing/ZigZag";
+import ModulesSection from "@/components/landing/SurveyModules";
+import FinalCTA from "@/components/landing/FinalCTA";
 
 export default function Page() {
-  return <Image src="/profile.png" alt="Profile" width={100} height={100} />;
+  return (
+    <>
+      <Hero />
+      <Features />
+      <ZigZag />
+      <ModulesSection />
+      <FinalCTA />
+    </>
+  );
 }

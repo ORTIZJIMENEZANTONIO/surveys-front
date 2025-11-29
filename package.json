@@ -9,6 +9,7 @@
   "dependencies": {
     "axios": "^1.13.2",
     "bootstrap": "^5.3.8",
+    "http-proxy-middleware": "^3.0.5",
     "next": "^16.0.5",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
@@ -17,6 +18,7 @@
   "devDependencies": {
     "@types/node": "24.10.1",
     "@types/react": "19.2.7",
+    "sass": "^1.94.2",
     "typescript": "5.9.3"
   }
 }

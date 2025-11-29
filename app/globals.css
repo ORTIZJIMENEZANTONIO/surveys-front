@@ -1,0 +1,205 @@
+/* ==========================================================
+   AO Insight Engine — GLOBAL UI (Bootstrap + AO)
+   ========================================================== */
+
+/* ------------------------------
+   COLOR SYSTEM
+   ------------------------------ */
+:root {
+  --ao-purple: #6d2fd8;
+  --ao-magenta: #b43cc7;
+  --ao-pink: #e54499;
+  --ao-orange: #f3873a;
+
+  --ao-dark: #0f0f10;
+  --ao-gray-700: #4a4a4d;
+  --ao-gray-300: #d3d3d8;
+  --ao-light: #ffffff;
+
+  --ao-gradient: linear-gradient(
+    135deg,
+    #6d2fd8 0%,
+    #b43cc7 35%,
+    #e54499 65%,
+    #f3873a 100%
+  );
+}
+
+/* ==========================================================
+   AO HERO FULL-WIDTH
+   ========================================================== */
+
+.hero-full {
+  width: 100%;
+  padding: clamp(4rem, 3vw, 7rem) 0;
+  background: var(--ao-gradient);
+  background-size: 200% 200%;
+  animation: aoGradient 14s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+}
+
+/* gradient movement */
+@keyframes aoGradient {
+  0% {
+    background-position: 0% 40%;
+  }
+  50% {
+    background-position: 100% 60%;
+  }
+  100% {
+    background-position: 0% 40%;
+  }
+}
+
+/* glass layer for readability */
+.hero-full::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
+  z-index: 1;
+}
+
+.hero-full * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ==========================================================
+   BADGE
+   ========================================================== */
+
+.ao-badge {
+  padding: 0.55rem 1.3rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(6px);
+  font-weight: 600;
+  color: white;
+  font-size: 0.9rem;
+}
+
+/* ==========================================================
+   CTA BUTTON (Premium)
+   ========================================================== */
+
+.btn-ao {
+  background: white;
+  color: var(--ao-purple);
+  font-weight: 700 !important;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.18);
+  transition: 0.25s ease;
+}
+
+.btn-ao:hover {
+  background: #fff;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+}
+
+/* ==========================================================
+   FLOATING CARDS EFFECT
+   ========================================================== */
+
+.hero-cards-floating {
+  margin-top: -4.5rem; /* Overlaps the hero nicely */
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 10;
+}
+
+.feature-card {
+  border: none;
+  transition: 0.25s ease;
+  text-align: center;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.12);
+}
+
+.feature-card svg {
+  width: 42px;
+  height: 42px;
+  margin-bottom: 0.5rem;
+}
+
+/* ==========================================================
+   BACKGROUND SHAPES
+   ========================================================== */
+
+.ao-shape {
+  position: absolute;
+  filter: blur(80px);
+  opacity: 0.45;
+  z-index: 1;
+}
+
+.ao-shape-1 {
+  width: 280px;
+  height: 280px;
+  background: var(--ao-purple);
+  top: -60px;
+  left: -60px;
+}
+
+.ao-shape-2 {
+  width: 240px;
+  height: 240px;
+  background: var(--ao-magenta);
+  bottom: -40px;
+  right: -40px;
+}
+
+.ao-shape-3 {
+  width: 220px;
+  height: 220px;
+  background: var(--ao-pink);
+  top: 28%;
+  left: 55%;
+}
+
+/* ==========================================================
+   ANIMATIONS
+   ========================================================== */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  opacity: 0;
+  animation: fadeUp 0.9s ease forwards;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}

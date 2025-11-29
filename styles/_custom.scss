@@ -1,0 +1,43 @@
+// 🎨 PALETA AO (Axend Operator)
+$ao-purple: #6D2FD8;    // Primario
+$ao-magenta: #B43CC7;   // Acentos
+$ao-pink: #E54499;      // Hover, estados
+$ao-orange: #F3873A;    // CTA
+$ao-yellow: #FBD165;    // Positivos
+$ao-dark: #1C1C1E;      // Texto
+$ao-light: #F7F7F7;     // Fondos
+
+// 🔥 Degradado principal
+$gradient-primary: linear-gradient(
+  135deg,
+  #6D2FD8 0%,
+  #B43CC7 35%,
+  #E54499 65%,
+  #F3873A 100%
+);
+
+// 🎯 Sobrescribir variables de Bootstrap
+$primary: $ao-purple;
+$secondary: $ao-magenta;
+$success: $ao-yellow;
+$info: $ao-pink;
+$warning: $ao-orange;
+$danger: $ao-pink;
+$light: $ao-light;
+$dark: $ao-dark;
+
+// Opcional: bordes
+$border-radius: 0.6rem;
+
+// 🎯 Botones gradiente
+.btn-gradient-primary {
+  background: $gradient-primary;
+  border: none;
+  color: white;
+  font-weight: 600;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    filter: brightness(1.05);
+  }
+}
