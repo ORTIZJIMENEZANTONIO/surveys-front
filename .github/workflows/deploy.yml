@@ -7,21 +7,25 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
       - name: Install dependencies
-        run: npm install
+        run: yarn install --frozen-lockfile
 
-      - name: Build static site
-        run: npm run build
+      - name: Build project
+        run: yarn build
 
       - name: Export static site
-        run: npm run export
+        run: yarn export
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
@@ -31,9 +35,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build
-    permissions:
-      pages: write
-      id-token: write
 
     steps:
       - name: Deploy to GitHub Pages

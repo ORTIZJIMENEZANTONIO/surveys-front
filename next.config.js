@@ -1,13 +1,13 @@
 const path = require("path");
 
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
-};
-
-module.exports = {
+  images: { unoptimized: true },
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
   },
-  nextConfig,
+  basePath: "/surveys-front",
+  assetPrefix: "/surveys-front/",
 };
+
+module.exports = nextConfig;
