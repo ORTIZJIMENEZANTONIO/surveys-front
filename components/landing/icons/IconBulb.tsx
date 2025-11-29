@@ -6,8 +6,8 @@ export default function IconBulb({ className }: IconBulbProps) {
   return (
     <svg
       className={className}
-      width="32"
-      height="32"
+      width="62"
+      height="62"
       viewBox="0 0 24 24"
       fill="none"
       stroke="#6D2FD8"

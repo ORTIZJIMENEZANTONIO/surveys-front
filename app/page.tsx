@@ -8,8 +8,8 @@ export default function Page() {
   return (
     <>
       <Hero />
-      <Features />
       <ZigZag />
+      <Features />
       <ModulesSection />
       <FinalCTA />
     </>

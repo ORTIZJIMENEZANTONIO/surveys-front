@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <>
       {/* HERO FULL WIDTH */}
-      <section className="hero-full text-center position-relative overflow-hidden">
+      <section className="hero-full text-center position-relative overflow-hidden ">
         {/* Gradient shapes */}
         <div className="ao-shape ao-shape-1"></div>
         <div className="ao-shape ao-shape-2"></div>
@@ -33,10 +33,10 @@ export default function Hero() {
       </section>
 
       {/* FLOATING CARDS — OUTSIDE THE HERO */}
-      <section className="hero-cards-floating">
+      <section className="hero-cards-floating" data-ao-group>
         <div className="container">
           <div className="row gy-4 justify-content-center">
-            <div className="col-12 col-md-4 col-lg-3">
+            <div className="col-12 col-md-4 col-lg-3 ao-scroll">
               <div className="card shadow rounded-4 feature-card py-3 gap-3 text-center">
                 <IconBulb className="card-img-top mx-auto" />
                 <div className="card-body">
@@ -48,7 +48,7 @@ export default function Hero() {
               </div>
             </div>
 
-            <div className="col-12 col-md-4 col-lg-3">
+            <div className="col-12 col-md-4 col-lg-3 ao-scroll">
               <div className="card shadow rounded-4 feature-card py-3 gap-3 text-center">
                 <IconGear className="card-img-top mx-auto" />
                 <div className="card-body">
@@ -60,7 +60,7 @@ export default function Hero() {
               </div>
             </div>
 
-            <div className="col-12 col-md-4 col-lg-3">
+            <div className="col-12 col-md-4 col-lg-3 ao-scroll">
               <div className="card shadow rounded-4 feature-card py-3 gap-3 text-center">
                 <IconAnalytics className="card-img-top mx-auto" />
                 <div className="card-body">

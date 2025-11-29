@@ -110,7 +110,7 @@
    ========================================================== */
 
 .hero-cards-floating {
-  margin-top: -4.5rem; /* Overlaps the hero nicely */
+  margin-top: -7rem; /* Overlaps the hero nicely */
   margin-bottom: 3rem;
   position: relative;
   z-index: 10;
@@ -128,8 +128,8 @@
 }
 
 .feature-card svg {
-  width: 42px;
-  height: 42px;
+  width: 75px;
+  height: 75px;
   margin-bottom: 0.5rem;
 }
 
@@ -202,4 +202,252 @@
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
+}
+
+/* ==========================================================
+   SECTION: Why AO Insight Engine
+   ========================================================== */
+
+.info-card {
+  transition: 0.25s ease;
+  border: none;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 26px rgba(0, 0, 0, 0.12);
+}
+
+/* ==========================================================
+   ZigZag Section
+   ========================================================== */
+
+.zigzag-section {
+  background: var(--ao-gray-100);
+  border-radius: 2rem;
+  margin: 3rem auto;
+  padding: clamp(3rem, 8vw, 5rem) 0;
+}
+
+/* Chip tags */
+.ao-chip {
+  background: white;
+  padding: 0.55rem 1.1rem;
+  border-radius: 2rem;
+  border: 1px solid var(--ao-gray-300);
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: 0.25s ease;
+}
+
+.ao-chip:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* ==========================================================
+   Modules section
+   ========================================================== */
+
+.module-card {
+  transition: 0.25s ease;
+  background: white;
+  border: none;
+}
+
+.module-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* ==========================================================
+   AO — EXTENSIONES DE ANIMACIÓN Y EFECTOS
+   Para ModulesSection y FinalCTA
+   ========================================================== */
+
+/* Scroll reveal */
+.ao-scroll {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.ao-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Sutil hover para module cards */
+.module-card {
+  transition: 0.3s ease !important;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.module-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* FINAL CTA Background */
+.ao-final-cta {
+  background: var(--ao-gradient);
+  border-radius: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Floating glow effect */
+.ao-final-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 20% 30%,
+    rgba(255, 255, 255, 0.15),
+    transparent 60%
+  );
+  animation: aoGlow 8s ease-in-out infinite alternate;
+}
+
+@keyframes aoGlow {
+  0% {
+    opacity: 0.25;
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 0.45;
+    transform: translateY(-14px);
+  }
+}
+
+/* FINAL CTA subtle entrance */
+.ao-final-cta h2,
+.ao-final-cta p,
+.ao-final-cta button {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: all 1s ease;
+}
+
+.ao-final-cta.visible h2,
+.ao-final-cta.visible p,
+.ao-final-cta.visible button {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================
+   AO E-LEARNING MODULE CARD
+   ========================================================== */
+
+.ao-module-card {
+  background: white;
+  border-radius: 1.2rem;
+  padding: 1.6rem;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  transition: 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.ao-module-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.1);
+}
+
+/* Left bubble */
+.ao-module-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 1.15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ao-module-not-started {
+  background: var(--ao-dark);
+  color: white;
+}
+
+.ao-module-in-progress {
+  background: var(--ao-pink);
+  color: white;
+}
+
+.ao-module-completed {
+  background: #0cc26c; /* AO Success Green */
+  color: white;
+}
+
+/* Title block */
+.ao-module-info h5 {
+  margin-bottom: 0;
+  font-weight: 700;
+}
+
+.ao-module-meta {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+/* Results link */
+.ao-results-link {
+  color: #0cc26c;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.ao-results-link:hover {
+  text-decoration: underline;
+}
+
+/* Align last column */
+.ao-module-right {
+  margin-left: auto;
+  text-align: right;
+}
+
+/* ------- Animación del ícono (fill burst) ------- */
+
+.ao-module-icon {
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.ao-module-card.visible .ao-module-icon {
+  transform: scale(1.05);
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
+}
+
+/* ==========================================================
+   AO - INTERNAL MODULE PROGRESS BAR
+   ========================================================== */
+
+.ao-progress-container {
+  width: 100%;
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 0.8rem;
+  position: relative;
+}
+
+.ao-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--ao-gradient);
+  border-radius: 6px;
+  transition: width 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* When the card becomes visible, animate fill */
+.ao-module-card.visible .ao-progress-fill {
+  width: var(--progress);
 }

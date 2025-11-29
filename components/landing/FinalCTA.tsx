@@ -2,17 +2,20 @@
 
 export default function FinalCTA() {
   return (
-    <section className="container py-5">
-      <div className="ao-final-cta p-5 text-center rounded-4 shadow">
-        <h2 className="fw-bold text-white mb-3 animate-fade-in">
+    <section
+      className="container-fluid px-0 hero-full ao-final-cta rounded-0"
+      data-ao-group
+    >
+      <div className="p-5 text-center ao-scroll">
+        <h2 className="fw-bold text-white mb-3 ao-scroll">
           ¿Listo para transformar tu análisis empresarial?
         </h2>
 
-        <p className="text-white-50 mb-4 animate-fade-in delay-2">
+        <p className="text-white-50 mb-4 ao-scroll">
           AO Insight Engine convierte datos en estrategias accionables.
         </p>
 
-        <button className="btn btn-light btn-lg px-4 fw-bold animate-fade-in delay-3">
+        <button className="btn btn-light btn-lg px-4 fw-bold ao-scroll">
           Integrar ahora
         </button>
       </div>
