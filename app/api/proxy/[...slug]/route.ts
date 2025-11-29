@@ -1,11 +1,13 @@
-// /app/api/proxy/[...slug]/route.ts
+import { NextRequest } from "next/server";
 
 export async function GET(
-  req: Request,
-  { params }: { params: { slug: string[] } }
+  req: NextRequest,
+  context: { params: Promise<{ slug: string[] }> }
 ) {
+  const { slug } = await context.params; // 👈 Next 16 lo envía como Promise
+
   try {
-    const url = params.slug.join("/");
+    const url = slug.join("/");
     const target = `${process.env.NEXT_PUBLIC_API_URL}/${url}`;
 
     const upstreamRes = await fetch(target, {
@@ -28,9 +30,7 @@ export async function GET(
     });
   } catch (err: any) {
     return new Response(
-      JSON.stringify({
-        error: err?.message || "Internal Server Error",
-      }),
+      JSON.stringify({ error: err?.message || "Internal Server Error" }),
       { status: 500 }
     );
   }
