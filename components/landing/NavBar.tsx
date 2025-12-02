@@ -29,12 +29,7 @@ function NavBar() {
         </button>
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="d-flex navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/about">
-                Acerca de
-              </a>
-            </li>
+          <ul className="d-flex navbar-nav ms-auto mb-2 mb-lg-0 float-right">
             <li className="nav-item">
               <a className="nav-link active" aria-current="page" href="/about">
                 Admin
@@ -42,7 +37,7 @@ function NavBar() {
             </li>
             <li className="nav-item">
               <a className="nav-link active" aria-current="page" href="/about">
-                Profile
+                Iniciar sesión
               </a>
             </li>
           </ul>

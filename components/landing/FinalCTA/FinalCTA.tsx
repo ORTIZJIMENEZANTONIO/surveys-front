@@ -8,7 +8,7 @@ export default function FinalCTA() {
       className={`${styles.finalCta} container-fluid px-0 rounded-0`}
       data-ao-group
     >
-      <div className="p-5 text-center ao-scroll">
+      <div className="p-5 text-center">
         <h2 className="fw-bold text-white mb-3 ao-scroll">
           ¿Listo para transformar tu análisis empresarial?
         </h2>

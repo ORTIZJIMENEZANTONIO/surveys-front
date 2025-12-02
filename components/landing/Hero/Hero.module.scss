@@ -1,5 +1,7 @@
-@use "../../../styles/variables" as *;
-@use "../../../styles/mixins" as *;
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+@use "@/styles/animations";
+
 
 /* ==========================================================
    HERO SECTION
@@ -8,9 +10,14 @@
 .heroFull {
   width: 100%;
   padding: clamp(4rem, 3vw, 7rem) 0;
-  @include gradient-bg;
+  background: linear-gradient(135deg,
+      $ao-purple,
+      $ao-magenta,
+      $ao-pink,
+      $ao-orange,
+      $ao-purple );
   background-size: 200% 200%;
-  animation: aoGradient 14s ease-in-out infinite;
+  animation: aoLavaBG 16s ease-in-out infinite;
   position: relative;
   overflow: hidden;
   color: white;
@@ -20,10 +27,14 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(4px);
+    background: radial-gradient(circle at 30% 40%,
+        rgba(255, 255, 255, 0.25),
+        transparent 70%);
+    mix-blend-mode: soft-light;
+    animation: aoGlow 9s ease-in-out infinite alternate;
     z-index: 1;
   }
+
 
   * {
     position: relative;

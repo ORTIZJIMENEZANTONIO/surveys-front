@@ -1,23 +1,26 @@
-@use "./variables";
+@use "./variables" as *;
 
-/* BOOTSTRAP OVERRIDES */
-$primary: variables.$ao-purple;
-$secondary: variables.$ao-magenta;
-$success: variables.$ao-yellow;
-$info: variables.$ao-pink;
-$warning: variables.$ao-orange;
-$danger: variables.$ao-pink;
-$light: variables.$ao-light;
-$dark: variables.$ao-dark;
+/* Bootstrap variables override */
+$primary: $ao-purple;
+$secondary: $ao-magenta;
+$success: $ao-yellow;
+$info: $ao-pink;
+$warning: $ao-orange;
+$danger: $ao-pink;
+$light: $ao-light;
+$dark: $ao-dark;
 
 $border-radius: .6rem;
 
+/* Optional custom AO buttons */
 .btn-gradient-primary {
-  background: variables.$gradient-primary;
-  border: none;
+  background: $ao-gradient;
   color: white;
+  border: none;
   font-weight: 600;
-  transition: 0.2s ease-in-out;
+  padding: .75rem 1.6rem;
+  border-radius: .6rem;
+  transition: 0.2s;
 
   &:hover {
     filter: brightness(1.05);

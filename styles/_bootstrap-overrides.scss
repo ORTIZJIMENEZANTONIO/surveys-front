@@ -1,0 +1,28 @@
+@use "./variables" as *;
+
+/* Buttons */
+.btn-primary {
+  background: var(--ao-purple) !important;
+  border-color: var(--ao-purple) !important;
+}
+
+.btn-primary:hover {
+  background: #5923b6 !important;
+}
+
+/* Progress Bar */
+.progress-bar {
+  background: var(--ao-gradient) !important;
+}
+
+/* Cards */
+.card {
+  border-radius: 1rem;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+}
+
+/* Alerts */
+.alert-primary {
+  background-color: rgba(109, 47, 216, 0.12);
+  color: var(--ao-purple);
+}

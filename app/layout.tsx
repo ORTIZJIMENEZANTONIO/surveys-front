@@ -1,7 +1,5 @@
 import "@/styles/index.scss";
 
-import "bootstrap/dist/css/bootstrap.min.css";
-
 import BootstrapClient from "@/components/global/BootstrapClient";
 
 import NavBar from "../components/landing/NavBar";

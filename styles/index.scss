@@ -1,6 +1,28 @@
+/* ============================================================
+   1. SASS @use MODULES (DEBEN IR AL PRINCIPIO)
+   ============================================================ */
+
+/* AO Variables (SASS y CSS) */
 @use "./variables";
-@use "./mixins";
-@use "./animations";
-@use "./bootstrap";
-@use "./utilities";
+
+/* AO Bootstrap Overrides (usa variables AO) */
+@use "./bootstrap-overrides";
+
+/* Globales AO */
 @use "./globals";
+
+/* Animaciones AO */
+@use "./animations";
+
+/* Utilidades AO */
+@use "./utilities";
+
+/* Mixins AO */
+@use "./mixins";
+
+/* ============================================================
+   2. BOOTSTRAP IMPORTS (DEBEN IR DESPUÉS DE TODOS LOS @use)
+   ============================================================ */
+
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/bootstrap";
